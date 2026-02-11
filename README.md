@@ -1,16 +1,33 @@
-## Hi there 👋
+open class IAM(
+    val name: String = "Ramen",
+    val aka: String = "beyalora",
+    val about: String = "Coding is my primary work",
+    val languages: Array<String> = arrayOf(
+        "Kotlin",
+        "Java",
+        "JavaScript"
+    ),
+    val editors: Array<String> = arrayOf(
+        "Me",
+        "Im",
+        "Ramen",
+    ),
+    val activities: Array<String> = arrayOf(
+        "Cycling",
+        "Designing",
+        "Debloating",
+        "Exploring",
+    ),
+    val status: String = "Noob!",
+) {
+    operator fun invoke(action: IAM.() -> Unit) = this.apply(action)
 
-<!--
-**beyaloraramen/beyaloraramen** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+    override fun toString() =
+        """
+        | Intro:  $name ($aka): $about
+        | Langs:  ${languages.joinToString(", ")}
+        | Editor: ${editors.joinToString(", ")}
+        | Hobby:  ${activities.joinToString(", ")}
+        | Status: $status
+        """.trimMargin()
+}
